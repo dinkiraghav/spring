@@ -29,7 +29,7 @@ public class HotelResource {
     @GetMapping
   public ModelAndView home(){
         log.debug("web request to get Hotels");
-        Page<Hotel> page = hotelService.findAll(PageRequest.of(0,20));
+        Page<Hotel> page = hotelService.findAll(PageRequest.of(0,5));
         List<Hotel> hotels = page.getContent();
         return new ModelAndView("index", "hotels", hotels);
     }
